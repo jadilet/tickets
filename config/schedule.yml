@@ -1,0 +1,4 @@
+reservation_job:
+  cron: "*/1 * * * *"
+  class: "ReservationWorker"
+  queue: default

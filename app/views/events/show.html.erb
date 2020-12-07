@@ -1,0 +1,14 @@
+<h1><%= @event.title %></h1>
+<p><%= @event.description %> </p>
+<p> Only <%= @event.ticket.quantity %> left</p>
+<hr>
+
+<%= form_tag(:controller => 'reservations', :action => 'reserve', :method => :post) do %>
+  <%= label_tag(:quantity, "Number of ticket") %>
+  <%= number_field_tag(:quantity) %>
+  <%= hidden_field_tag(:id, params[:id] ) %>
+  <%= submit_tag("Reserve") %>
+
+<% end %>
+
+<%= link_to 'Buy', payment_path(@event.ticket) %>

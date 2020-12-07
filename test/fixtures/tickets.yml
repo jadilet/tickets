@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  quantity: MyString
+  price: 9.99
+  type: one
+  avail_start: 2020-12-05 12:56:39
+  avail_end: 2020-12-05 12:56:39
+
+two:
+  quantity: MyString
+  price: 9.99
+  type: two
+  avail_start: 2020-12-05 12:56:39
+  avail_end: 2020-12-05 12:56:39

@@ -1,0 +1,9 @@
+api:
+  resources:
+    user: author
+  fields:
+    article:
+      name: title
+  errors:
+    codes:
+      blank: cant_be_blank

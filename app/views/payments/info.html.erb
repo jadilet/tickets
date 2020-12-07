@@ -1,0 +1,15 @@
+<h1>Payment info</h1>
+<%= form_tag(:controller => 'payments', :action => 'pay', :method => :post) do %>
+  <%= label_tag(:name, "Name and Surname") %>
+  <%= text_field_tag(:name) %>
+  <br>
+  <%= label_tag(:address, "Address") %>
+  <%= text_field_tag(:address) %>
+  <br>
+  <%= label_tag(:quantity, "Number of ticket") %>
+  <%= number_field_tag(:quantity) %>
+  <%= hidden_field_tag(:id, params[:id] ) %>
+  <br>
+  <%= submit_tag("Buy") %>
+
+<% end %>
