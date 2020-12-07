@@ -4,11 +4,11 @@ class TicketNotAvailable < StandardError
   end
 
   def code
-    'ticket_not_available'
+    'ticket_not_enough'
   end
 
   def message
-    "Ticket not available for selling!"
+    "There is not enough ticket for selling or reserving!"
   end
 
   def to_hash

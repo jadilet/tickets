@@ -18,13 +18,13 @@ class Ticket < ApplicationRecord
   # AVOID_ONE (we can only buy tickets in a quantity that will not leave only 1 ticket available)
   # EVEN (we can only buy tickets in quantity that is even)
   def available?(quantity)
-    if quantity <= 0
+    if quantity > self.quantity || quantity <= 0
       return false
     end
 
     case self.type.name
     when "EVEN"
-      if quantity%2 == 0 && quantity <= self.quantity
+      if quantity%2 == 0
         return true
       end
       raise TicketNotEvenQuantity

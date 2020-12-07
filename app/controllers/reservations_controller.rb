@@ -12,7 +12,7 @@ class ReservationsController < ApplicationController
     raise TicketNotAvailable unless  ticket.available?(params[:quantity])
 
     Ticket.transaction do
-      ticket = @event.ticket.lock!("FOR UPDATE NOWAIT")
+      ticket = ticket.lock!("FOR UPDATE NOWAIT")
       reservation = current_user.reservations.new(reservation_params)
       reservation.ticket = ticket
       ticket.quantity -= params[:quantity]
